@@ -1,0 +1,4 @@
+/* App-level layout utilities */
+.app-wrapper {
+  min-height: 100vh;
+}

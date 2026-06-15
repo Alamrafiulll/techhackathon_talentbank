@@ -1,0 +1,431 @@
+.syllo-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  pointer-events: none;
+}
+
+/* Speech Bubble */
+.syllo-speech {
+  background: var(--bg-card);
+  border: 1px solid var(--border-yellow);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  max-width: 260px;
+  box-shadow: var(--shadow-yellow);
+  pointer-events: auto;
+  position: relative;
+}
+
+.syllo-speech p {
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.syllo-speech-arrow {
+  position: absolute;
+  bottom: -6px;
+  right: 30px;
+  width: 12px;
+  height: 12px;
+  background: var(--bg-card);
+  border-right: 1px solid var(--border-yellow);
+  border-bottom: 1px solid var(--border-yellow);
+  transform: rotate(45deg);
+}
+
+/* Owl Base */
+.syllo-owl {
+  width: 80px;
+  position: relative;
+  animation: syllo-bounce 3s ease-in-out infinite;
+}
+
+@keyframes syllo-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Graduation Cap */
+.syllo-cap {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -8px;
+}
+
+.syllo-cap-top {
+  width: 44px;
+  height: 8px;
+  background: #1a1a1a;
+  transform: perspective(40px) rotateX(20deg);
+  border-radius: 2px;
+  position: relative;
+}
+
+.syllo-cap-top::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 12px;
+  background: #111;
+  border-radius: 2px 2px 0 0;
+}
+
+.syllo-cap-tassel {
+  position: absolute;
+  right: 4px;
+  top: 0;
+}
+
+.syllo-cap-tassel-string {
+  width: 2px;
+  height: 14px;
+  background: var(--yellow);
+  margin-left: 4px;
+}
+
+.syllo-cap-tassel-end {
+  width: 8px;
+  height: 8px;
+  background: var(--yellow);
+  border-radius: 50%;
+  animation: tassel-swing 2s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+@keyframes tassel-swing {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+/* Head */
+.syllo-head {
+  position: relative;
+  z-index: 2;
+}
+
+.syllo-ear {
+  position: absolute;
+  top: -2px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 14px solid var(--yellow-dim);
+  z-index: 1;
+}
+
+.syllo-ear-left { left: 8px; transform: rotate(-10deg); }
+.syllo-ear-right { right: 8px; transform: rotate(10deg); }
+
+.syllo-face {
+  width: 60px;
+  height: 48px;
+  background: var(--yellow);
+  border-radius: 50% 50% 45% 45%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 -4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Glasses */
+.syllo-glasses {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-top: -2px;
+}
+
+.syllo-glass {
+  width: 20px;
+  height: 18px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.syllo-glass-bridge {
+  width: 6px;
+  height: 2px;
+  background: #333;
+  margin-top: -2px;
+}
+
+.syllo-eye {
+  width: 10px;
+  height: 10px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.syllo-eye.blink {
+  height: 2px;
+  border-radius: 2px;
+}
+
+.syllo-pupil {
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  margin-top: -2px;
+  margin-left: 2px;
+}
+
+.syllo-eye.blink .syllo-pupil {
+  display: none;
+}
+
+/* Beak */
+.syllo-beak {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--orange-soft);
+  margin-top: 2px;
+}
+
+/* Body */
+.syllo-body {
+  width: 52px;
+  height: 36px;
+  background: var(--yellow-dim);
+  border-radius: 40% 40% 50% 50%;
+  margin: -4px auto 0;
+  position: relative;
+  z-index: 1;
+}
+
+.syllo-chest-pattern {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 24px;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.15) 0px,
+    rgba(255, 255, 255, 0.15) 2px,
+    transparent 2px,
+    transparent 5px
+  );
+  border-radius: 40%;
+}
+
+/* Wings */
+.syllo-wing {
+  position: absolute;
+  width: 18px;
+  height: 26px;
+  background: var(--yellow);
+  top: 4px;
+  border-radius: 50% 50% 60% 40%;
+  transition: var(--transition-normal);
+}
+
+.syllo-wing-left {
+  left: -6px;
+  transform-origin: top right;
+  border-radius: 60% 40% 50% 50%;
+}
+
+.syllo-wing-right {
+  right: -6px;
+  transform-origin: top left;
+  border-radius: 40% 60% 50% 50%;
+}
+
+.syllo-wing-left.waving {
+  animation: wave-wing 1s ease-in-out infinite;
+}
+
+@keyframes wave-wing {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-25deg); }
+  75% { transform: rotate(10deg); }
+}
+
+.syllo-wing-left.pointing {
+  transform: rotate(-40deg);
+}
+
+.syllo-pointer-stick {
+  position: absolute;
+  bottom: -4px;
+  left: -12px;
+  width: 20px;
+  height: 2px;
+  background: #8B4513;
+  transform: rotate(-30deg);
+  border-radius: 1px;
+}
+
+.syllo-pointer-stick::after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  background: var(--red-soft);
+  border-radius: 50%;
+}
+
+.syllo-wing-right.celebrating {
+  animation: celebrate-wing 0.5s ease-in-out infinite;
+}
+
+@keyframes celebrate-wing {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-20deg); }
+}
+
+.syllo-flag {
+  position: absolute;
+  top: -14px;
+  right: -8px;
+  font-size: 16px;
+  animation: flag-wave 1s ease-in-out infinite;
+}
+
+@keyframes flag-wave {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+/* Clipboard */
+.syllo-clipboard {
+  position: absolute;
+  bottom: -2px;
+  right: -14px;
+  width: 16px;
+  height: 20px;
+  background: var(--cream);
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  padding: 4px 2px;
+}
+
+.syllo-clipboard-clip {
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 4px;
+  background: #888;
+  border-radius: 1px 1px 0 0;
+}
+
+.syllo-clipboard-lines div {
+  width: 10px;
+  height: 1px;
+  background: #ccc;
+  margin-bottom: 2px;
+}
+
+.syllo-magnifying-glass {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 14px;
+  animation: magnify-move 2s ease-in-out infinite;
+}
+
+@keyframes magnify-move {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-3px, 3px); }
+}
+
+.syllo-stamp {
+  position: absolute;
+  top: 2px;
+  left: 1px;
+  width: 14px;
+  height: 14px;
+  background: var(--chalk-green);
+  color: white;
+  font-size: 10px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* Feet */
+.syllo-feet {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: -2px;
+  position: relative;
+  z-index: 0;
+}
+
+.syllo-foot {
+  width: 16px;
+  height: 6px;
+  background: var(--orange-soft);
+  border-radius: 0 0 50% 50%;
+}
+
+/* Think Bubbles */
+.syllo-think-bubbles {
+  position: absolute;
+  top: -40px;
+  left: -20px;
+}
+
+.syllo-think-bubble {
+  width: 8px;
+  height: 8px;
+  background: var(--yellow-glow);
+  border: 1px solid var(--border-yellow);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.syllo-think-bubble-1 { bottom: 0; left: 20px; width: 6px; height: 6px; }
+.syllo-think-bubble-2 { bottom: 12px; left: 12px; width: 8px; height: 8px; }
+.syllo-think-bubble-3 { bottom: 26px; left: 6px; width: 12px; height: 12px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .syllo-container {
+    bottom: 12px;
+    right: 12px;
+  }
+  .syllo-owl {
+    width: 64px;
+  }
+  .syllo-speech {
+    max-width: 200px;
+  }
+}

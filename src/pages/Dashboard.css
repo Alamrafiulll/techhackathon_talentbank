@@ -1,0 +1,227 @@
+.dash-page {
+  max-width: 1100px;
+}
+
+.dash-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.dash-page-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.dash-page-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.dash-scan-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, var(--yellow), var(--yellow-dim));
+  color: #000;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-yellow);
+}
+
+.dash-scan-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 25px rgba(245, 197, 24, 0.35);
+}
+
+/* Score Cards */
+.dash-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.dash-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.dash-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+.dash-card-yellow::before { background: var(--yellow); }
+.dash-card-red::before { background: var(--red-soft); }
+.dash-card-orange::before { background: var(--orange-soft); }
+
+.dash-card:hover {
+  border-color: var(--border-yellow);
+  background: var(--bg-card-hover);
+}
+
+.dash-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dash-card-yellow .dash-card-icon {
+  background: rgba(245, 197, 24, 0.12);
+  color: var(--yellow);
+}
+
+.dash-card-red .dash-card-icon {
+  background: var(--red-dim);
+  color: var(--red-soft);
+}
+
+.dash-card-orange .dash-card-icon {
+  background: var(--orange-dim);
+  color: var(--orange-soft);
+}
+
+.dash-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.dash-card-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.dash-card-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  line-height: 1;
+}
+
+.dash-card-arrow {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  transition: var(--transition-fast);
+}
+
+.dash-card:hover .dash-card-arrow {
+  color: var(--yellow);
+  transform: translateX(2px);
+}
+
+/* Chart */
+.dash-chart-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.dash-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dash-chart-header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.dash-chart-legend {
+  display: flex;
+  gap: 16px;
+}
+
+.dash-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.dash-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.dash-legend-dot.yellow { background: var(--yellow); }
+.dash-legend-dot.gray { background: #4A4A4A; }
+
+.dash-chart-tooltip {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.8rem;
+}
+
+.dash-chart-tooltip-label {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+/* Insight */
+.dash-insight {
+  background: var(--bg-card);
+  border: 1px solid var(--border-yellow);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.dash-insight-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.dash-insight h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--yellow);
+  margin-bottom: 6px;
+}
+
+.dash-insight p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.dash-insight strong {
+  color: var(--text-primary);
+}
