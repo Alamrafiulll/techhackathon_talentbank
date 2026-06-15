@@ -41,34 +41,25 @@ export default function RoleSelection() {
     <div className="role-page">
       {/* Background */}
       <div className="role-bg">
+        <div className="role-bg-image" />
         <div className="role-bg-grid" />
         <div className="role-bg-glow" />
-        {/* Honeycomb grid overlay */}
-        <div className="role-honeycomb-overlay" />
-        {/* Large floating hexagons */}
-        <div className="role-floating-hex role-hex-1" />
-        <div className="role-floating-hex role-hex-2" />
-        <div className="role-floating-hex role-hex-3" />
-
-        {/* Floating little bee-like hexagonal particles */}
-        {Array.from({ length: 18 }).map((_, i) => (
+        {Array.from({ length: 15 }).map((_, i) => (
           <motion.div
             key={i}
-            className="role-honeybee-particle"
+            className="role-particle"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
             animate={{
-              y: [0, -40 - Math.random() * 40, 0],
-              x: [0, (Math.random() - 0.5) * 35, 0],
-              opacity: [0.15, 0.6, 0.15],
-              scale: [1, 1.3, 1],
+              y: [0, -30 - Math.random() * 30, 0],
+              opacity: [0.15, 0.5, 0.15],
             }}
             transition={{
-              duration: 8 + Math.random() * 8,
+              duration: 6 + Math.random() * 6,
               repeat: Infinity,
-              delay: Math.random() * 4,
+              delay: Math.random() * 3,
             }}
           />
         ))}
