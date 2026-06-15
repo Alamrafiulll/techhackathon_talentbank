@@ -53,8 +53,8 @@ export default function Syllo({ message, pose = 'wave', show = true, delay = 0.5
             </motion.div>
           )}
 
-          {/* Owl body */}
-          <div className="syllo-owl">
+          {/* Bumblebee character */}
+          <div className="syllo-bee">
             {/* Graduation cap */}
             <div className="syllo-cap">
               <div className="syllo-cap-top" />
@@ -64,14 +64,14 @@ export default function Syllo({ message, pose = 'wave', show = true, delay = 0.5
               </div>
             </div>
 
-            {/* Head */}
-            <div className="syllo-head">
-              {/* Ear tufts */}
-              <div className="syllo-ear syllo-ear-left" />
-              <div className="syllo-ear syllo-ear-right" />
+            {/* Bee Head */}
+            <div className="syllo-bee-head">
+              {/* Antennae */}
+              <div className="syllo-antenna syllo-antenna-left" />
+              <div className="syllo-antenna syllo-antenna-right" />
               
               {/* Face */}
-              <div className="syllo-face">
+              <div className="syllo-bee-face">
                 {/* Glasses */}
                 <div className="syllo-glasses">
                   <div className="syllo-glass syllo-glass-left">
@@ -86,21 +86,38 @@ export default function Syllo({ message, pose = 'wave', show = true, delay = 0.5
                     </div>
                   </div>
                 </div>
-                {/* Beak */}
-                <div className="syllo-beak" />
+                {/* Cute smile */}
+                <div className="syllo-bee-smile" />
+                {/* Cheeks blush */}
+                <div className="syllo-bee-blush" />
               </div>
             </div>
 
-            {/* Body */}
-            <div className="syllo-body">
-              <div className="syllo-chest-pattern" />
-              {/* Wings */}
-              <div className={`syllo-wing syllo-wing-left ${pose === 'wave' ? 'waving' : ''} ${pose === 'point' ? 'pointing' : ''}`}>
-                {pose === 'point' && <div className="syllo-pointer-stick" />}
+            {/* Bee Body */}
+            <div className="syllo-bee-body">
+              {/* Stripes */}
+              <div className="syllo-bee-stripes">
+                <div className="syllo-bee-stripe" />
+                <div className="syllo-bee-stripe" />
+                <div className="syllo-bee-stripe" />
               </div>
-              <div className={`syllo-wing syllo-wing-right ${pose === 'celebrate' ? 'celebrating' : ''}`}>
-                {pose === 'celebrate' && <div className="syllo-flag">🎓</div>}
+
+              {/* Translucent buzzing wings */}
+              <div className="syllo-bee-wings">
+                <div className="syllo-bee-wing syllo-bee-wing-left" />
+                <div className="syllo-bee-wing syllo-bee-wing-right" />
               </div>
+
+              {/* Arms */}
+              <div className="syllo-bee-arms">
+                <div className={`syllo-bee-arm syllo-bee-arm-left ${pose === 'wave' ? 'waving' : ''} ${pose === 'point' ? 'pointing' : ''}`}>
+                  {pose === 'point' && <div className="syllo-pointer-stick" />}
+                </div>
+                <div className={`syllo-bee-arm syllo-bee-arm-right ${pose === 'celebrate' ? 'celebrating' : ''}`}>
+                  {pose === 'celebrate' && <div className="syllo-flag">🎓</div>}
+                </div>
+              </div>
+
               {/* Clipboard */}
               {(pose === 'wave' || pose === 'stamp' || pose === 'magnify') && (
                 <div className="syllo-clipboard">
@@ -124,9 +141,9 @@ export default function Syllo({ message, pose = 'wave', show = true, delay = 0.5
             </div>
 
             {/* Feet */}
-            <div className="syllo-feet">
-              <div className="syllo-foot syllo-foot-left" />
-              <div className="syllo-foot syllo-foot-right" />
+            <div className="syllo-bee-feet">
+              <div className="syllo-bee-foot syllo-bee-foot-left" />
+              <div className="syllo-bee-foot syllo-bee-foot-right" />
             </div>
           </div>
 

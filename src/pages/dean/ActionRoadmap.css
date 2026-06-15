@@ -1,0 +1,91 @@
+.ar-page { max-width: 860px; }
+.ar-back { display: inline-flex; align-items: center; gap: 6px; background: none; color: var(--text-secondary); font-size: 0.82rem; margin-bottom: 16px; transition: color var(--transition-fast); }
+.ar-back:hover { color: var(--yellow); }
+.ar-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; }
+.ar-subtitle { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 32px; }
+
+/* Phases */
+.ar-phases { display: flex; flex-direction: column; gap: 0; margin-bottom: 32px; }
+
+.ar-phase {
+  display: flex; gap: 20px; position: relative;
+}
+
+.ar-phase-marker {
+  display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 44px;
+}
+
+.ar-phase-number {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--phase-color, var(--yellow)); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; font-weight: 800; flex-shrink: 0;
+  box-shadow: 0 0 20px color-mix(in srgb, var(--phase-color, var(--yellow)) 30%, transparent);
+}
+
+.ar-phase-connector {
+  width: 2px; flex: 1; min-height: 20px;
+  background: linear-gradient(to bottom, var(--phase-color, var(--yellow)), var(--border));
+}
+
+.ar-phase-card {
+  flex: 1; background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 24px; margin-bottom: 16px;
+  border-left: 3px solid var(--phase-color, var(--yellow));
+  transition: border-color var(--transition-fast);
+}
+.ar-phase-card:hover { border-color: var(--phase-color, var(--yellow)); }
+
+.ar-phase-header h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+.ar-phase-meta { display: flex; gap: 12px; }
+.ar-phase-duration {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 0.78rem; color: var(--text-muted); font-weight: 500;
+}
+
+.ar-phase-actions { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+.ar-phase-actions li {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4;
+}
+.ar-phase-actions li svg { color: var(--phase-color, var(--yellow)); flex-shrink: 0; margin-top: 2px; }
+
+/* Decision */
+.ar-decision {
+  background: var(--bg-card); border: 1px solid var(--border-yellow);
+  border-radius: var(--radius-md); padding: 24px;
+}
+.ar-decision h2 { font-size: 1.05rem; font-weight: 600; margin-bottom: 16px; }
+.ar-decision-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.ar-btn {
+  display: inline-flex; align-items: center; gap: 6px; padding: 12px 22px;
+  border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600;
+  transition: all var(--transition-fast);
+}
+.ar-btn.primary { background: var(--yellow); color: var(--bg-deep); }
+.ar-btn.primary:hover { background: var(--yellow-bright); }
+.ar-btn.secondary { background: var(--bg-elevated); color: var(--text-secondary); border: 1px solid var(--border); }
+.ar-btn.secondary:hover { border-color: var(--yellow); color: var(--yellow); }
+.ar-btn.outline { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
+.ar-btn.outline:hover { border-color: var(--yellow); color: var(--yellow); }
+
+/* Modal */
+.ar-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 100; }
+.ar-modal {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 32px; max-width: 480px; width: 90%; position: relative;
+}
+.ar-modal-close { position: absolute; top: 16px; right: 16px; background: none; color: var(--text-muted); }
+.ar-modal h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 12px; }
+.ar-modal p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.5; }
+.ar-modal-btns { display: flex; gap: 10px; justify-content: flex-end; }
+
+.ar-modal-success { text-align: center; padding: 20px; }
+.ar-success-icon {
+  width: 56px; height: 56px; border-radius: 50%; background: var(--status-approved-bg);
+  color: var(--chalk-green); display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; font-weight: 800; margin: 0 auto 16px;
+}
+.ar-modal-success h3 { font-size: 1.1rem; margin-bottom: 6px; }
+.ar-modal-success p { font-size: 0.85rem; color: var(--text-muted); }

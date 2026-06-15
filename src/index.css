@@ -31,6 +31,23 @@
   --orange-soft: #F09030;
   --orange-dim: rgba(240, 144, 48, 0.15);
   --blue-soft: #4A90D9;
+  --blue-dim: rgba(74, 144, 217, 0.15);
+  --purple-soft: #9B59B6;
+  --purple-dim: rgba(155, 89, 182, 0.15);
+  
+  /* Status */
+  --status-approved: #4A7C59;
+  --status-approved-bg: rgba(74, 124, 89, 0.12);
+  --status-pending: #F5C518;
+  --status-pending-bg: rgba(245, 197, 24, 0.1);
+  --status-critical: #E8453C;
+  --status-critical-bg: rgba(232, 69, 60, 0.1);
+  --status-warning: #F09030;
+  --status-warning-bg: rgba(240, 144, 48, 0.1);
+  --status-draft: #6B6B65;
+  --status-draft-bg: rgba(107, 107, 101, 0.1);
+  --status-review: #4A90D9;
+  --status-review-bg: rgba(74, 144, 217, 0.1);
   
   /* Borders */
   --border: rgba(255, 255, 255, 0.06);

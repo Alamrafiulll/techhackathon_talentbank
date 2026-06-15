@@ -41,25 +41,25 @@
   transform: rotate(45deg);
 }
 
-/* Owl Base */
-.syllo-owl {
+/* Bee Base */
+.syllo-bee {
   width: 80px;
   position: relative;
-  animation: syllo-bounce 3s ease-in-out infinite;
+  animation: bee-bounce 3s ease-in-out infinite;
 }
 
-@keyframes syllo-bounce {
+@keyframes bee-bounce {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+  50% { transform: translateY(-5px); }
 }
 
 /* Graduation Cap */
 .syllo-cap {
   position: relative;
-  z-index: 3;
+  z-index: 4;
   display: flex;
   justify-content: center;
-  margin-bottom: -8px;
+  margin-bottom: -10px;
 }
 
 .syllo-cap-top {
@@ -110,28 +110,44 @@
   50% { transform: rotate(5deg); }
 }
 
-/* Head */
-.syllo-head {
+/* Bee Head */
+.syllo-bee-head {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
-.syllo-ear {
+.syllo-antenna {
   position: absolute;
-  top: -2px;
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 14px solid var(--yellow-dim);
+  top: -12px;
+  width: 2px;
+  height: 14px;
+  background: #1a1a1a;
   z-index: 1;
 }
 
-.syllo-ear-left { left: 8px; transform: rotate(-10deg); }
-.syllo-ear-right { right: 8px; transform: rotate(10deg); }
+.syllo-antenna::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -3px;
+  width: 8px;
+  height: 8px;
+  background: var(--yellow);
+  border-radius: 50%;
+}
 
-.syllo-face {
-  width: 60px;
+.syllo-antenna-left {
+  left: 16px;
+  transform: rotate(-18deg);
+}
+
+.syllo-antenna-right {
+  right: 16px;
+  transform: rotate(18deg);
+}
+
+.syllo-bee-face {
+  width: 62px;
   height: 48px;
   background: var(--yellow);
   border-radius: 50% 50% 45% 45%;
@@ -141,7 +157,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 -4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -4px 8px rgba(0, 0, 0, 0.12);
 }
 
 /* Glasses */
@@ -149,15 +165,15 @@
   display: flex;
   align-items: center;
   gap: 2px;
-  margin-top: -2px;
+  margin-top: 2px;
 }
 
 .syllo-glass {
-  width: 20px;
-  height: 18px;
-  border: 2px solid #333;
+  width: 22px;
+  height: 20px;
+  border: 2px solid #222;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,14 +183,14 @@
 .syllo-glass-bridge {
   width: 6px;
   height: 2px;
-  background: #333;
+  background: #222;
   margin-top: -2px;
 }
 
 .syllo-eye {
   width: 10px;
   height: 10px;
-  background: #1a1a1a;
+  background: #111;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -200,115 +216,182 @@
   display: none;
 }
 
-/* Beak */
-.syllo-beak {
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 8px solid var(--orange-soft);
-  margin-top: 2px;
+/* Smile */
+.syllo-bee-smile {
+  width: 12px;
+  height: 6px;
+  border-bottom: 2.5px solid #222;
+  border-radius: 0 0 10px 10px;
+  margin-top: 3px;
 }
 
-/* Body */
-.syllo-body {
-  width: 52px;
-  height: 36px;
-  background: var(--yellow-dim);
-  border-radius: 40% 40% 50% 50%;
+/* Blush */
+.syllo-bee-blush {
+  position: absolute;
+  bottom: 8px;
+  width: 46px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.syllo-bee-blush::before,
+.syllo-bee-blush::after {
+  content: '';
+  width: 8px;
+  height: 5px;
+  background: rgba(232, 69, 60, 0.45);
+  border-radius: 50%;
+}
+
+/* Bee Body & Stripes */
+.syllo-bee-body {
+  width: 56px;
+  height: 42px;
   margin: -4px auto 0;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  border-radius: 40% 40% 48% 48%;
+  overflow: hidden;
+  box-shadow: inset 0 -4px 8px rgba(0, 0, 0, 0.15);
+  background: #222;
 }
 
-.syllo-chest-pattern {
+.syllo-bee-stripes {
   position: absolute;
-  top: 4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 28px;
-  height: 24px;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.15) 0px,
-    rgba(255, 255, 255, 0.15) 2px,
-    transparent 2px,
-    transparent 5px
-  );
-  border-radius: 40%;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Wings */
-.syllo-wing {
+.syllo-bee-stripe {
+  flex: 1;
+}
+
+.syllo-bee-stripe:nth-child(odd) {
+  background: var(--yellow-dim);
+}
+
+.syllo-bee-stripe:nth-child(even) {
+  background: #222;
+}
+
+/* Bee Wings (translucent & buzzing) */
+.syllo-bee-wings {
   position: absolute;
-  width: 18px;
-  height: 26px;
-  background: var(--yellow);
-  top: 4px;
-  border-radius: 50% 50% 60% 40%;
-  transition: var(--transition-normal);
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
 }
 
-.syllo-wing-left {
-  left: -6px;
-  transform-origin: top right;
-  border-radius: 60% 40% 50% 50%;
+.syllo-bee-wing {
+  position: absolute;
+  width: 24px;
+  height: 34px;
+  background: rgba(230, 245, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  top: -12px;
 }
 
-.syllo-wing-right {
-  right: -6px;
-  transform-origin: top left;
-  border-radius: 40% 60% 50% 50%;
+.syllo-bee-wing-left {
+  left: -14px;
+  border-radius: 50% 50% 10% 50%;
+  transform-origin: bottom right;
+  animation: bee-wing-left-buzz 0.1s linear infinite;
 }
 
-.syllo-wing-left.waving {
-  animation: wave-wing 1s ease-in-out infinite;
+.syllo-bee-wing-right {
+  right: -14px;
+  border-radius: 50% 50% 50% 10%;
+  transform-origin: bottom left;
+  animation: bee-wing-right-buzz 0.1s linear infinite;
 }
 
-@keyframes wave-wing {
+@keyframes bee-wing-left-buzz {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(-35deg) scaleY(0.9); }
+}
+
+@keyframes bee-wing-right-buzz {
+  0%, 100% { transform: rotate(5deg); }
+  50% { transform: rotate(35deg) scaleY(0.9); }
+}
+
+/* Bee Arms */
+.syllo-bee-arms {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+.syllo-bee-arm {
+  position: absolute;
+  width: 14px;
+  height: 10px;
+  background: #222;
+  top: 12px;
+  border-radius: 6px;
+}
+
+.syllo-bee-arm-left {
+  left: -2px;
+  transform-origin: center right;
+}
+
+.syllo-bee-arm-right {
+  right: -2px;
+  transform-origin: center left;
+}
+
+.syllo-bee-arm-left.waving {
+  animation: wave-arm 1.2s ease-in-out infinite;
+}
+
+@keyframes wave-arm {
   0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-25deg); }
-  75% { transform: rotate(10deg); }
+  30% { transform: rotate(-35deg); }
+  60% { transform: rotate(15deg); }
 }
 
-.syllo-wing-left.pointing {
-  transform: rotate(-40deg);
+.syllo-bee-arm-left.pointing {
+  transform: rotate(-30deg) translateY(-2px);
 }
 
 .syllo-pointer-stick {
   position: absolute;
-  bottom: -4px;
-  left: -12px;
-  width: 20px;
-  height: 2px;
+  bottom: -2px;
+  left: -14px;
+  width: 22px;
+  height: 3px;
   background: #8B4513;
-  transform: rotate(-30deg);
-  border-radius: 1px;
+  transform: rotate(-25deg);
+  border-radius: 2px;
 }
 
 .syllo-pointer-stick::after {
   content: '';
   position: absolute;
   right: -3px;
-  top: -3px;
-  width: 6px;
-  height: 6px;
+  top: -2px;
+  width: 7px;
+  height: 7px;
   background: var(--red-soft);
   border-radius: 50%;
 }
 
-.syllo-wing-right.celebrating {
-  animation: celebrate-wing 0.5s ease-in-out infinite;
+.syllo-bee-arm-right.celebrating {
+  animation: celebrate-arm 0.6s ease-in-out infinite;
 }
 
-@keyframes celebrate-wing {
+@keyframes celebrate-arm {
   0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(-20deg); }
+  50% { transform: rotate(25deg); }
 }
 
 .syllo-flag {
   position: absolute;
-  top: -14px;
+  top: -16px;
   right: -8px;
   font-size: 16px;
   animation: flag-wave 1s ease-in-out infinite;
@@ -319,17 +402,18 @@
   50% { transform: rotate(5deg); }
 }
 
-/* Clipboard */
+/* Clipboard (held by bee arms) */
 .syllo-clipboard {
   position: absolute;
-  bottom: -2px;
-  right: -14px;
-  width: 16px;
-  height: 20px;
+  bottom: -4px;
+  right: -10px;
+  width: 18px;
+  height: 22px;
   background: var(--cream);
   border-radius: 2px;
   border: 1px solid #ccc;
   padding: 4px 2px;
+  z-index: 4;
 }
 
 .syllo-clipboard-clip {
@@ -339,21 +423,21 @@
   transform: translateX(-50%);
   width: 8px;
   height: 4px;
-  background: #888;
+  background: #777;
   border-radius: 1px 1px 0 0;
 }
 
 .syllo-clipboard-lines div {
-  width: 10px;
+  width: 12px;
   height: 1px;
-  background: #ccc;
-  margin-bottom: 2px;
+  background: #bbb;
+  margin-bottom: 2.5px;
 }
 
 .syllo-magnifying-glass {
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: -10px;
+  right: -10px;
   font-size: 14px;
   animation: magnify-move 2s ease-in-out infinite;
 }
@@ -366,12 +450,12 @@
 .syllo-stamp {
   position: absolute;
   top: 2px;
-  left: 1px;
+  left: 2px;
   width: 14px;
   height: 14px;
   background: var(--chalk-green);
   color: white;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 900;
   display: flex;
   align-items: center;
@@ -380,20 +464,20 @@
 }
 
 /* Feet */
-.syllo-feet {
+.syllo-bee-feet {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin-top: -2px;
+  gap: 10px;
+  margin-top: -1px;
   position: relative;
-  z-index: 0;
+  z-index: 1;
 }
 
-.syllo-foot {
-  width: 16px;
-  height: 6px;
-  background: var(--orange-soft);
-  border-radius: 0 0 50% 50%;
+.syllo-bee-foot {
+  width: 12px;
+  height: 8px;
+  background: #222;
+  border-radius: 50%;
 }
 
 /* Think Bubbles */
@@ -416,14 +500,14 @@
 .syllo-think-bubble-2 { bottom: 12px; left: 12px; width: 8px; height: 8px; }
 .syllo-think-bubble-3 { bottom: 26px; left: 6px; width: 12px; height: 12px; }
 
-/* Responsive */
+/* Responsive styling */
 @media (max-width: 768px) {
   .syllo-container {
     bottom: 12px;
     right: 12px;
   }
-  .syllo-owl {
-    width: 64px;
+  .syllo-bee {
+    width: 68px;
   }
   .syllo-speech {
     max-width: 200px;
