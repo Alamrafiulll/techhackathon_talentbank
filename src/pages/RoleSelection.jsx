@@ -41,7 +41,6 @@ export default function RoleSelection() {
     <div className="role-page">
       {/* Background */}
       <div className="role-bg">
-        <div className="role-bg-image" />
         <div className="role-bg-grid" />
         <div className="role-bg-glow" />
         {Array.from({ length: 15 }).map((_, i) => (

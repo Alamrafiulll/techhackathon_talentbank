@@ -34,15 +34,6 @@
   background: radial-gradient(circle, rgba(245, 197, 24, 0.06) 0%, transparent 60%);
 }
 
-.role-bg-image {
-  position: absolute;
-  inset: 0;
-  background-image: url('/japanese_university_bg.png');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.18; /* Subtle watermark opacity to keep the text clear */
-}
-
 .role-particle {
   position: absolute;
   width: 3px;
